@@ -6,11 +6,11 @@ class CommandEvents(commands.Cog):
     self.bot = bot 
     
   @commands.Cog.listener()
-  async def on_command_error(ctx, error):
+  async def on_command_error(self, ctx, error):
     print(ctx.command.name +' was called incorrectly')
   
   @commands.Cog.listener()
-  async def on_command(ctx):
+  async def on_command(self, ctx):
     if ctx.command is not None:
       if ctx.command.name in commands_tally:
         commands_tally[ctx.command.name] += 1
@@ -18,7 +18,7 @@ class CommandEvents(commands.Cog):
         commands_tally[ctx.command.name] = 1
       
   @commands.Cog.listener()
-  async def on_command_completion(ctx):
+  async def on_command_completion(self, ctx):
     print(ctx.command.name + 'was called successfully')
 def setup(bot):
   bot.add_cog(CommandEvents(bot))
