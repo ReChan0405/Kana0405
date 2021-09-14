@@ -7,7 +7,7 @@ Bot = commands.Bot(command_prefix = '#', help_command = None)
 async def on_ready():
     print(f'{client.user} is ready ')
     
-extensions = ['cogs.CommandEvents', 'cogs.HelpCommands']
+extensions = ['cogs.CommandEvents', 'cogs.HelpCommands', 'cogs.Administrator']
 
 if __name__ = '__main__':
     for ext in extensions:
