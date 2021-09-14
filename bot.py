@@ -7,5 +7,10 @@ Bot = commands.Bot(command_prefix = '#')
 async def on_ready():
     print(f'{client.user} is ready ')
     
-Bot.load_extension('cogs.CommandEvents')
+extensions = ['cogs.CommandEvents', 'cogs.HelpCommands']
+
+if __name__ = '__main__':
+    for ext in extensions:
+        client.load_extensions(ext)
+   
 Bot.run('TOKEN')
